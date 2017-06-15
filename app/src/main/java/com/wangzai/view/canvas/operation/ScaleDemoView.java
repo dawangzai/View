@@ -10,22 +10,24 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by wangzai on 2017/6/14.
+ * Created by wangzai on 2017/6/15.
  */
 
-public class ScaleView extends View {
+public class ScaleDemoView extends View {
     private Paint mPaint = new Paint();
-    private int mWidth;
     private int mHeight;
+    private int mWidth;
 
-    public ScaleView(Context context, @Nullable AttributeSet attrs) {
+    public ScaleDemoView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
         initPaint();
     }
 
     private void initPaint() {
-        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setColor(Color.BLACK);
         mPaint.setStrokeWidth(10f);
+        mPaint.setStyle(Paint.Style.STROKE);
     }
 
     @Override
@@ -40,20 +42,13 @@ public class ScaleView extends View {
         super.onDraw(canvas);
 
         canvas.translate(mWidth / 2, mHeight / 2);
-        RectF rectF = new RectF(0, -400, 400, 0);
+
+        RectF rectF = new RectF(-250, -250, 250, 250);
         canvas.drawRect(rectF, mPaint);
 
-        canvas.scale(0.5f, 0.5f); //以画布中心点为原点缩放一半
-        mPaint.setColor(Color.GREEN);
-        canvas.drawRect(rectF, mPaint);
-
-        canvas.scale(0.5f, 0.5f, 200, 0); //以（200,0）为原点缩放画布
-        mPaint.setColor(Color.BLUE);
-        canvas.drawRect(rectF, mPaint);
-
-        mPaint.setColor(Color.DKGRAY);
-        canvas.scale(-0.5f,-0.5f);  //缩放比例为负值，表示缩放加翻转（沿X轴翻转，沿着Y轴翻转）
-        canvas.drawRect(rectF,mPaint);
-
+        for (int i = 0; i < 10; i++) {
+            canvas.scale(0.9f, 0.9f);
+            canvas.drawRect(rectF, mPaint);
+        }
     }
 }

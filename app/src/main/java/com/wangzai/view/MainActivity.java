@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.wangzai.view.canvas.draw.DrawActivity;
 import com.wangzai.view.canvas.operation.OperationActivity;
+import com.wangzai.view.touchevent.TouchEventActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.llExamples);
         findViewById(R.id.tvDrawColor).setOnClickListener(this);
         findViewById(R.id.tvOperation).setOnClickListener(this);
-        findViewById(R.id.tvCaptcha).setOnClickListener(this);
+        findViewById(R.id.tvTouchEvent).setOnClickListener(this);
     }
 
     @Override
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent operationIntent = new Intent(this, OperationActivity.class);
                 startActivity(operationIntent);
                 break;
-            case R.id.tvCaptcha:
-//                Intent captchaIntent = new Intent(this, CaptchaActivity.class);
-//                startActivity(captchaIntent);
+            case R.id.tvTouchEvent:
+                Intent touchEventIntent = new Intent(this, TouchEventActivity.class);
+                startActivity(touchEventIntent);
                 break;
         }
     }

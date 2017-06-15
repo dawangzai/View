@@ -20,6 +20,18 @@
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
             android:background="#fff" />
+
+        <com.wangzai.view.canvas.operation.ScaleDemoView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff" />
+
+        <com.wangzai.view.canvas.operation.RotateView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff" />
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

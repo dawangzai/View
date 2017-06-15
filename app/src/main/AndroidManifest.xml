@@ -20,6 +20,8 @@
         <activity android:name=".canvas.draw.DrawActivity" />
 
         <activity android:name=".canvas.operation.OperationActivity" />
+
+        <activity android:name=".touchevent.TouchEventActivity" />
     </application>
 
 </manifest>
